@@ -6,16 +6,17 @@ const initialState: AppState = {
   clients: [
     {
       id: '1',
-      name: 'Acme Corp',
-      country: 'USA',
-      email: 'contact@acme.com'
+      name: 'RISA',
+      country: 'Rwanda',
+      email: 'info@risa.gov.rw'
     },
     {
       id: '2',
-      name: 'Global Tech',
-      country: 'UK',
-      email: 'info@globaltech.com'
-    }
+      name: 'Igire Rwanda',
+      country: 'Rwanda',
+      email: 'info@igirerwanda.org'
+    },
+    
   ],
   projects: [
     {
