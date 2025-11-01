@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { AppProvider } from './context/AppContext';
+import { AppProvider, useAppContext } from './context/AppContext';
 import Sidebar from './Components/Sidebar';
 import DashboardStats from './Components/DashboardStats';
 import ProjectList from './Components/ProjectList';
 import ClientList from './pages/ClientList';
 import PaymentHistory from './pages/PaymentHistory';
 
-function AppContent() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+function MainContent() {
+  const { state } = useAppContext();
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [currentView, setCurrentView] = useState('dashboard');
 
   const renderContent = () => {
@@ -19,7 +20,7 @@ function AppContent() {
             <DashboardStats />
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Recent Projects</h3>
-              <ProjectList projects={useAppContext().state.projects.slice(0, 5)} />
+              <ProjectList projects={state.projects.slice(0, 5)} />
             </div>
           </div>
         );
@@ -29,7 +30,7 @@ function AppContent() {
         return (
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-gray-800">All Projects</h2>
-            <ProjectList projects={useAppContext().state.projects} />
+            <ProjectList projects={state.projects} />
           </div>
         );
       case 'payments':
@@ -48,8 +49,10 @@ function AppContent() {
         onToggle={() => setSidebarOpen(!sidebarOpen)}
       />
       
-      {/* Main content */}
-      <div className="flex-1 flex flex-col overflow-hidden lg:ml-0">
+      {/* Main content - full width when sidebar is hidden */}
+      <div className={`flex-1 flex flex-col overflow-hidden transition-all duration-300 ${
+        sidebarOpen ? 'lg:ml-64' : 'lg:ml-0'
+      }`}>
         <main className="flex-1 overflow-y-auto p-6">
           <div className="max-w-7xl mx-auto">
             {renderContent()}
@@ -63,7 +66,7 @@ function AppContent() {
 function App() {
   return (
     <AppProvider>
-      <AppContent />
+      <MainContent />
     </AppProvider>
   );
 }

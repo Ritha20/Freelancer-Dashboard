@@ -17,15 +17,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, currentView, onViewChange, on
 
   return (
     <>
-      {/* Toggle Button */}
+      {/* Single Toggle Button - Always on top left */}
       <button
         onClick={onToggle}
         className="fixed top-4 left-4 z-50 bg-blue-600 text-white p-3 rounded-lg shadow-lg hover:bg-blue-700 transition-colors"
       >
-        <span className="text-xl">☰</span>
+        <span className="text-xl">{isOpen ? '←' : '☰'}</span>
       </button>
 
-      {/* Overlay */}
+      {/* Overlay for mobile - only closes sidebar on mobile */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
@@ -33,13 +33,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, currentView, onViewChange, on
         />
       )}
 
-      {/* Sidebar */}
+      {/* Sidebar - Completely hidden when closed */}
       <div
-        className={`fixed top-0 left-0 h-full bg-white shadow-xl z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full bg-white shadow-xl z-40 w-64 transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } w-64 lg:translate-x-0 lg:static lg:z-auto`}
+        }`}
       >
-        <div className="p-6 border-b border-gray-200">
+        <div className="p-6 border-b border-gray-200 mt-16">
           <h1 className="text-xl font-bold text-gray-800">Freelance Dashboard</h1>
         </div>
 
@@ -50,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, currentView, onViewChange, on
                 <button
                   onClick={() => {
                     onViewChange(item.id);
-                    // Close sidebar on mobile after selection
+                    // Only close sidebar on mobile after selection, keep open on desktop
                     if (window.innerWidth < 1024) {
                       onToggle();
                     }
