@@ -1,5 +1,4 @@
 import React from 'react';
-import { Payment } from '../types/index';
 import { useAppContext } from '../context/AppContext';
 import { formatCurrency, formatDate } from '../Utils/helpers';
 

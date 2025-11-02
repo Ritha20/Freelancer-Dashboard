@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AppProvider, useAppContext } from './context/AppContext';
 import Sidebar from './Components/Sidebar';
 import DashboardStats from './Components/DashboardStats';
