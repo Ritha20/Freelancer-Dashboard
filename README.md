@@ -47,3 +47,5 @@ src/
 - Responsive grid layouts
 - Touch-friendly interface elements
 - Optimized for all screen sizes
+
+Deployed Version: https://freelancer-dashboard-lwd6.vercel.app/
