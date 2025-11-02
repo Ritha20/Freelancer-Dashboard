@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
-import { AppState, AppAction, Client, Project, Payment } from '../types';
+import { AppState, AppAction } from '../types/index';
 
 // Initial state with example data
 const initialState: AppState = {

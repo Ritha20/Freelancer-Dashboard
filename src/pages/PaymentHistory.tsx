@@ -1,7 +1,7 @@
 import React from 'react';
-import { Payment } from '../types';
+import { Payment } from '../types/index';
 import { useAppContext } from '../context/AppContext';
-import { formatCurrency, formatDate, getClientName } from '../Utils/helpers';
+import { formatCurrency, formatDate } from '../Utils/helpers';
 
 const PaymentHistory: React.FC = () => {
   const { state } = useAppContext();
