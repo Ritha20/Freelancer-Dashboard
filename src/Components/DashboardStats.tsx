@@ -10,43 +10,43 @@ const DashboardStats: React.FC = () => {
     {
       title: 'Total Projects',
       value: stats.totalProjects.toString(),
-      color: 'bg-blue-500',
+    //   color: 'bg-blue-500',
       icon: '📊'
     },
     {
       title: 'Total Clients',
       value: stats.totalClients.toString(),
-      color: 'bg-green-500',
+    //   color: 'bg-green-500',
       icon: '👥'
     },
     {
       title: 'Paid Projects',
       value: stats.paidProjects.toString(),
-      color: 'bg-green-500',
+    //   color: 'bg-green-500',
       icon: '✅'
     },
     {
       title: 'Unpaid Projects',
       value: stats.unpaidProjects.toString(),
-      color: 'bg-red-500',
+    //   color: 'bg-red-500',
       icon: '⏳'
     },
     {
       title: 'Total Budget',
       value: formatCurrency(stats.totalBudget),
-      color: 'bg-purple-500',
-      icon: '💰'
+    //   color: 'bg-purple-500',
+      icon: '💲'
     },
     {
       title: 'Amount Received',
       value: formatCurrency(stats.paidAmount),
-      color: 'bg-green-500',
+    //   color: 'bg-green-500',
       icon: '💳'
     },
     {
       title: 'Pending Amount',
       value: formatCurrency(stats.pendingAmount),
-      color: 'bg-orange-500',
+    //   color: 'bg-orange-500',
       icon: '⌛'
     }
   ];
@@ -59,7 +59,7 @@ const DashboardStats: React.FC = () => {
           className="bg-white rounded-lg shadow-md p-6 border border-gray-200"
         >
           <div className="flex items-center">
-            <div className={`${stat.color} rounded-lg p-3 mr-4`}>
+            <div className='rounded-lg p-3 mr-4'>
               <span className="text-white text-xl">{stat.icon}</span>
             </div>
             <div>
