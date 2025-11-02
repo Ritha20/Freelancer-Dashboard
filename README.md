@@ -17,15 +17,6 @@ A modern, type-safe React application built with TypeScript for managing freelan
 - **Styling**: Tailwind CSS
 - **Build Tool**: Vite
 
-## Project Structure
-
-src/
-├── components/     # Reusable UI components
-├── context/        # Global state management
-├── pages/          # Main application pages
-├── types/          # TypeScript type definitions
-└── utils/          # Helper functions and utilities
-
 ## Key Features
 
 - **Type-Safe**: Full TypeScript implementation with strict typing
