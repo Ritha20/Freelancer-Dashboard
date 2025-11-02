@@ -1,75 +1,49 @@
-# React + TypeScript + Vite
+# Freelance Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, type-safe React application built with TypeScript for managing freelance clients, projects, and payments.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Client Management** - Add, view, and manage client information
+- **Project Tracking** - Track project status, budgets, and deadlines  
+- **Payment Management** - Monitor payment status and history
+- **Dashboard Analytics** - View key metrics and statistics
+- **Responsive Design** - Works seamlessly on desktop and mobile
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Frontend**: React + TypeScript
+- **State Management**: Context API + useReducer
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
 
-Note: This will impact Vite dev & build performances.
+## Project Structure
 
-## Expanding the ESLint configuration
+src/
+├── components/     # Reusable UI components
+├── context/        # Global state management
+├── pages/          # Main application pages
+├── types/          # TypeScript type definitions
+└── utils/          # Helper functions and utilities
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Key Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Type-Safe**: Full TypeScript implementation with strict typing
+- **Real-Time Updates**: Instant state synchronization across components
+- **Responsive Sidebar**: Collapsible navigation with smooth animations
+- **CRUD Operations**: Create, read, update, and delete clients and projects
+- **Payment Tracking**: Mark projects as paid and track payment history
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Usage
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Dashboard**: View overall statistics and recent projects
+2. **Clients**: Manage client information and contact details
+3. **Projects**: Track project progress and payment status
+4. **Payments**: View payment history and financial overview
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Responsive Design
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Mobile-friendly hamburger menu
+- Responsive grid layouts
+- Touch-friendly interface elements
+- Optimized for all screen sizes
