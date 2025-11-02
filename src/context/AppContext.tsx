@@ -22,7 +22,7 @@ const initialState: AppState = {
     {
       id: '1',
       clientId: '1',
-      title: 'E-commerce Website',
+      title: 'Learning Platform & Data Cleaning',
       budget: 5000,
       status: 'in-progress',
       paymentStatus: 'unpaid'

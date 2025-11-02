@@ -33,7 +33,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, currentView, onViewChange, on
         />
       )}
 
-      {/* Sidebar - Completely hidden when closed */}
+      {/* Sidebar hidden when closed */}
       <div
         className={`fixed top-0 left-0 h-full bg-white shadow-xl z-40 w-64 transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
